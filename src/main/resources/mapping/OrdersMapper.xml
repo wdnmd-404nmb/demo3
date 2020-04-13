@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tx.zhcrm.mapper.OrdersMapper">
+    <select id="selectAll" resultType="com.tx.zhcrm.entity.Orders">
+        select orders_id,orders_time,price,customer_name,sex,address,telephone from orders,customer where
+        orders.customer_id = customer.customer_id and orders.is_del=1
+    </select>
+</mapper>
